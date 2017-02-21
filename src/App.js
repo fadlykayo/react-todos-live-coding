@@ -22,7 +22,7 @@ class App extends Component {
           </form>
           <div className="Todo-List">
             <ul>
-              {data.map(item => {
+              {data.filter(item => item.isCompleted !== true).map(item => {
                 return (
                   <li key={item.id}><input type="checkbox" defaultChecked={item.isCompleted} /> {item.text}</li>
                 )
