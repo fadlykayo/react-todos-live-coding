@@ -4,6 +4,12 @@ import './App.css'
 
 class App extends Component {
   render() {
+    const data = [
+      {id: 1, text: 'Learn React', isCompleted: true},
+      {id: 2, text: 'Build React app', isCompleted: false},
+      {id: 3, text: 'Ship it!', isCompleted: false},
+
+    ]
     return (
       <div className="App">
         <div className="App-header">
@@ -16,9 +22,11 @@ class App extends Component {
           </form>
           <div className="Todo-List">
             <ul>
-              <li><input type="checkbox" /> Learn React</li>
-              <li><input type="checkbox" /> Build something with React</li>
-              <li><input type="checkbox" /> Ship it!</li>
+              {data.map(item => {
+                return (
+                  <li key={item.id}><input type="checkbox" defaultChecked={item.isCompleted} /> {item.text}</li>
+                )
+              })}
             </ul>
           </div>
           
