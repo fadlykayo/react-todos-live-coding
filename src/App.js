@@ -28,7 +28,6 @@ class App extends Component {
           <div className='Todo-List'>
             <ul>
               {this.state.todos
-                 .filter(item => item.isCompleted !== true)
                  .map(item => {
                    return (
                      <li key={item.id}>
