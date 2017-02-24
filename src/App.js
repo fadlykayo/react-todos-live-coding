@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-import { TodoForm } from './components/TodoForm.js'
+import { TodoForm, TodoList } from './components'
 
 const data = [
   { id: 1, text: 'Learn React', isCompleted: true },
@@ -31,20 +31,7 @@ class App extends Component {
         </div>
         <div className='Todo-App'>
           <TodoForm handleChange={this.handleChange.bind(this)} currentTodo={this.state.currentTod} />
-          <div className='Todo-List'>
-            <ul>
-              {this.state.todos
-                 .map(item => {
-                   return (
-                     <li key={item.id}>
-                       <input type='checkbox' defaultChecked={item.isCompleted} />
-                       {' '}
-                       {item.text}
-                     </li>
-                   )
-                 })}
-            </ul>
-          </div>
+          <TodoList todos={this.state.todos} />
         </div>
       </div>
     )
