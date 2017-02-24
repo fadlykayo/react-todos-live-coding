@@ -15,6 +15,11 @@ class App extends Component {
       currentTodo: ''
     }
   }
+  handleChange (event) {
+    this.setState({
+      currentTodo: event.target.value
+    })
+  }
   render () {
     return (
       <div className='App'>
@@ -24,7 +29,7 @@ class App extends Component {
         </div>
         <div className='Todo-App'>
           <form action=''>
-            <input type='text' value={this.state.currentTodo} />
+            <input type='text' value={this.state.currentTodo} onChange={this.handleChange.bind(this)} />
           </form>
           <div className='Todo-List'>
             <ul>
