@@ -11,7 +11,8 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      todos: data
+      todos: data,
+      currentTodo: ''
     }
   }
   render () {
@@ -23,7 +24,7 @@ class App extends Component {
         </div>
         <div className='Todo-App'>
           <form action=''>
-            <input type='text' />
+            <input type='text' value={this.state.currentTodo} />
           </form>
           <div className='Todo-List'>
             <ul>
