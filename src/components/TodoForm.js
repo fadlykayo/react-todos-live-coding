@@ -2,7 +2,7 @@ import React from 'react'
 
 export const TodoForm = (props) => {
   return (
-    <form action=''>
+    <form onSubmit={props.handleForm}>
       <input type='text' value={props.currentTodo} onChange={props.handleChange} />
     </form>
 
