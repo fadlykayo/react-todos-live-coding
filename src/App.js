@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
+import { TodoForm } from './components/TodoForm.js'
+
 const data = [
   { id: 1, text: 'Learn React', isCompleted: true },
   { id: 2, text: 'Build React app', isCompleted: false },
@@ -28,9 +30,7 @@ class App extends Component {
           <h2>React Todo</h2>
         </div>
         <div className='Todo-App'>
-          <form action=''>
-            <input type='text' value={this.state.currentTodo} onChange={this.handleChange.bind(this)} />
-          </form>
+          <TodoForm handleChange={this.handleChange.bind(this)} currentTodo={this.state.currentTod} />
           <div className='Todo-List'>
             <ul>
               {this.state.todos
