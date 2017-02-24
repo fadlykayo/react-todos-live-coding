@@ -9,3 +9,9 @@ export const TodoItem = (props) => {
     </li>
   )
 }
+
+TodoItem.propTypes = {
+  text: React.PropTypes.string.isRequired,
+  isCompleted: React.PropTypes.bool,
+  id: React.PropTypes.number.isRequired
+}

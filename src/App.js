@@ -30,7 +30,7 @@ class App extends Component {
           <h2>React Todo</h2>
         </div>
         <div className='Todo-App'>
-          <TodoForm handleChange={this.handleChange.bind(this)} currentTodo={this.state.currentTod} />
+          <TodoForm handleChange={this.handleChange.bind(this)} currentTodo={this.state.currentTodo} />
           <TodoList todos={this.state.todos} />
         </div>
       </div>
